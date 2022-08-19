@@ -26,6 +26,7 @@
     margin-right: 1rem;
 }
 
+/*---------------------- Formulário ---------------------- */
 form {
     max-width: 730px;
     background-color: #fff;
@@ -102,4 +103,42 @@ form button {
 
 form button:hover {
     background-color: #2fb86e;
+}
+/*---------------------- Ítens de coleta ---------------------- */
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+
+.items-grid li {
+    background-color: #f5f5f5;
+    list-style: none;
+    border: 2px solid #f5f5f5;
+    height: 180px;
+    padding: 32px 24px 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.items-grid li img {
+    width: 74.1875px;
+    height: 74.1875px;
+}
+
+.items-grid li.selected {
+    background-color: #e1faec;
+    border: 2px solid #34cb79;
+}
+
+.items-grid li img, .items-grid li span {
+    pointer-events: none;
 }
