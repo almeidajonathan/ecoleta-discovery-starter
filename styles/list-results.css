@@ -1,0 +1,27 @@
+#page-list-results {
+    width: 90%;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+#page-list-results header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#page-list-results header a {
+    color: var(--title-color);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+#page-list-results header a span {
+    background-image: url("../assets/arrow-left.svg");
+    display: flex;
+    width: 20px;
+    height: 22px;
+    margin-right: 1rem;
+}
