@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Fonts google -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap"
-      rel="stylesheet"/>
+{% extends "base-layout.html" %}
+{% set pageId = "page-home" %}
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/styles/main.css" />
+ <!-- CSS -->
+{% block styles %}
     <link rel="stylesheet" href="/styles/home.css" />
     <link rel="stylesheet" href="/styles/modal.css">
-    <link rel="stylesheet" href="/styles/responsive.css" />
+{% endblock styles %}
 
+    {% block title %}
     <title>Ecoleta</title>
-  </head>
-  <body>
+    {% endblock title %}
 
-    <div id="page-home">
+      {% block content %}
       <div class="content">
         <header>
           <img src="/assets/logo.svg" alt="logo" />
@@ -37,9 +29,13 @@
           <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
         </main>
       </div>
-    </div>
+      {% endblock content %}
 
-    {% include "partials/modal.html" %}
+
+    {% block modal %}  
+      {% include "partials/modal.html" %}
+    {% endblock modal %}  
+
+    {% block scripts %}
     <script src="/scripts/index.js"></script>
-  </body>
-</html>
+    {% endblock scripts %}

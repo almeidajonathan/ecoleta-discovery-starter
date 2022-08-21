@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Fonts google -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap"
-    rel="stylesheet" />
+{% extends "base-layout.html" %}
+{% set pageId = "page-list-results" %}
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/styles/main.css" />
+  {% block styles %}
   <link rel="stylesheet" href="/styles/list-results.css" />
-  <link rel="stylesheet" href="/styles/responsive.css" />
+  {% endblock styles %}
 
+  <!-- TITLE -->
+  {% block title %}
   <title>Lista de resultados</title>
-</head>
-
-<body>
-  <div id="page-list-results">
+  {% endblock title %}
   
-    {% include "partials/header.html" %}
+  <!-- CONTENT -->
+  {% block content %}
+      {% include "partials/header.html" %}
     
     <main>
         <h4>
@@ -51,7 +44,4 @@
             </div>
         </div>
     </main>
-
-</body>
-
-</html>
+{% endblock content %}

@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Fonts google -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap"
-    rel="stylesheet" />
+{% extends "base-layout.html" %}
+{% set pageId = "page-create-point" %}
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/styles/main.css" />
+  {% block styles %}
   <link rel="stylesheet" href="/styles/create-point.css" />
-  <link rel="stylesheet" href="/styles/responsive.css" />
+  {% endblock styles %}
+  
 
+  <!-- TITLE -->
+  {% block title %}
   <title>Criar ponto de coleta</title>
-</head>
+  {% endblock title %}
 
-<body>
-  <div id="page-create-point">
+  <!-- CONTENT -->
+  {% block content %}
     {% include "partials/header.html" %}
     <form action="">
       <!-- Cadastro de informações referente à entidade -->
@@ -29,19 +24,28 @@
           <h2>Dados da entidade</h2>
         </legend>
 
-        <div class="field">
-          <label for="name">Nome da entidade</label>
-          <input type="text" name="name" required/>
+        <div class="field-group"> 
+          <div class="field">
+            <label for="name">Nome da entidade</label>
+            <input type="text" name="name" placeholder="Exemplo: Colectoria"required/>
+          </div>
+
+          <div class="field">
+            <label for="image">Imagem da entidade</label>
+            <input type="url" name="image" placeholder="Digite a URL da imagem" required/>
+          </div>
         </div>
+
+        
 
         <div class="field-group">
           <div class="field">
             <label for="address">Endereço</label>
-            <input type="text" name="address" required/>
+            <input type="text" name="address" placeholder="Rua, Av..."required/>
           </div>
           <div class="field">
             <label for="address2">Número/Complemento</label>
-            <input type="text" name="address2" required/>
+            <input type="text" name="address2" placeholder="Exemplo: nº 106" required/>
           </div>
         </div>
 
@@ -66,7 +70,8 @@
       <!-- Seletor para opções aceitas pela entidade -->
       <fieldset>
         <legend>
-          <h2>Ítens de coleta</h2>
+          <h2>Itens de coleta</h2>
+          <span>Selecione um ou mais itens</span>
         </legend>
 
         <div class="items-grid">
@@ -108,8 +113,14 @@
 
       <button type="submit">Cadastrar ponto de coleta</button>
     </form>
-  </div>
-  <script src="/scripts/createPoint.js"></script>
-</body>
+{% endblock content %}
 
-</html>
+<!-- {% block modal %}
+    {% if saved %}
+        {%include "partials/point-created.html"%}
+    {% endif %}
+{% endblock modal %} -->
+
+{% block scripts %}
+   <script src="/scripts/createPoint.js"></script>
+{% endblock scripts %}
