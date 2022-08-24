@@ -20,7 +20,8 @@
   "homepage": "https://github.com/almeidajonathan/ecoleta-discovery-starter#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "sqlite3": "^5.0.11"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
