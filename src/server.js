@@ -1,4 +1,5 @@
 const express = require('express')
+const db = require('./database/db')
 
 const server = express()
 
@@ -22,7 +23,22 @@ server.get("/point", (req, res) => {
 })
 
 server.get("/search", (req, res) => {
-    return res.render("list-results.html")
+    
+    db.all(`SELECT * FROM places`, function(err, rows) {
+                if(err) {
+                    return console.log(err)
+                } else {
+                    console.log("Aqui estão seus registros")
+                    console.log(rows)
+                }
+                
+                const total = rows.length
+
+                //exibir a página com os dados do db
+                return res.render("list-results.html", { places: rows, total})
+
+            })
+
 })
 
 
