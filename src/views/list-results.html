@@ -16,12 +16,29 @@
       {% include "partials/header.html" %}
     
     <main>
+
+        {% if total > 0 %}
         <h4>
-            <strong>2 Pontos</strong> encontrados
+            <strong>{{ total }} Pontos</strong> encontrados
         </h4>
 
         <div class="cards">
+
+            {% for place in places %}
             <div class="card">
+                <img src="{{ place.image }}" alt="{{ place.name}}">
+                <h1>{{ place.name }}</h1>
+                <h3>{{ place.items }}</h3>
+                <p>
+                    {{ place.city}}, {{ place.state }}<br>
+                    {{ place.address }}<br>
+                    {{ place.address2}}
+                </p>
+            </div>
+            {% endfor %}
+
+
+            <!-- <div class="card">
                 <img src="https://images.unsplash.com/photo-1619641805634-b867f535071c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1184&q=80" alt="Colectoria">
                 <h1>Colectoria</h1>
                 <h3>Resíduos Eletrônicos, Lâmpadas</h3>
@@ -30,7 +47,7 @@
                     Guilherme Gemballa, Jardim América<br>
                     Nº 260
                 </p>
-            </div>
+            </div> -->
 
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1600031316492-ec731a3f4dd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Papersider">
@@ -43,5 +60,9 @@
                 </p>
             </div>
         </div>
+        {% else %}
+            <h4 id="not-find"><strong>Nenhum local encontrado.</strong> </h4>
+        {% endif %}
+       
     </main>
 {% endblock content %}
