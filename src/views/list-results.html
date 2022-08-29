@@ -49,7 +49,7 @@
                 </p>
             </div> -->
 
-            <div class="card">
+            <!-- <div class="card">
                 <img src="https://images.unsplash.com/photo-1600031316492-ec731a3f4dd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Papersider">
                 <h1>Papersider</h1>
                 <h3>Papéis e Papelão</h3>
@@ -58,10 +58,18 @@
                     Guilherme Gemballa, Jardim América <br>
                     Nº 273
                 </p>
-            </div>
+            </div> -->
         </div>
         {% else %}
-            <h4 id="not-find"><strong>Nenhum local encontrado.</strong> </h4>
+            <div id="not-found">
+                <h4>
+                    <strong>Viissh...</strong>
+                    <p>Nenhum local encontrado.</p>
+                </h4>
+                <img id="no-results" src="./assets/no-results.svg" alt="robô">
+            </div>
+            
+
         {% endif %}
        
     </main>
