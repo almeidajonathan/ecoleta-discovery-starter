@@ -37,6 +37,45 @@ main h4 {
     margin-bottom: 32px;
 }
 
+main #not-found {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+main #not-found h4{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    max-width: 410px;
+    font-size: 32px;
+    color: #6c6c80;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    order: 2;
+}
+main #not-found h4 strong {
+    text-align: center;
+    width: 100%;
+    font-size: 48px;
+    color: #75d8a2;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    margin-bottom: 0;
+
+}
+
+main #no-results {
+    margin-top: 14rem;
+    margin-inline: auto;
+    width: 128px;
+    height: 128px;
+    order: 1;
+}
+
+
+
 main .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
