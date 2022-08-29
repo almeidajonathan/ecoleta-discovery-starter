@@ -37,7 +37,7 @@ db.serialize(() => {
 
     // db.run(query, values, afterInsertData)
 
-    // db.run(`DELETE FROM places WHERE id = ?`, [6], function(err) {
+    // db.run(`DELETE FROM places WHERE id = ?`, [13], function(err) {
     //     if(err) {
     //         return console.log(err)
     //     } else {
@@ -45,15 +45,24 @@ db.serialize(() => {
     //     }
     // })
 
+    
+    //   db.run(`DELETE FROM places`, function(err) {
+    //     if(err) {
+    //         return console.log(err)
+    //     } else {
+    //         console.log('Registros deletados!')
+    //     }
+    // })
 
-//     db.all(`SELECT * FROM places`, function(err, rows) {
-//         if(err) {
-//             return console.log(err)
-//         } else {
-//             console.log("Aqui estão seus registros")
-//             console.log(rows)
-//         }
-//     })
+
+    // db.all(`SELECT * FROM places`, function(err, rows) {
+    //     if(err) {
+    //         return console.log(err)
+    //     } else {
+    //         console.log("Aqui estão seus registros")
+    //         console.log(rows)
+    //     }
+    // })
 })
 
 module.exports = db
