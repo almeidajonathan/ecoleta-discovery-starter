@@ -62,7 +62,7 @@ server.get("/search", (req, res) => {
     }
 
 
-        db.all(`SELECT * FROM places`, function (err, rows) {
+        db.all(`SELECT * FROM places WHERE city LIKE "%${search}%"`, function (err, rows) {
             if (err) {
                 return console.log(err)
             } else {

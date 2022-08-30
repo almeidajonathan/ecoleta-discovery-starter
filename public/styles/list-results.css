@@ -1,3 +1,7 @@
+body {
+    background-color: #fff;
+}
+
 #page-list-results {
     width: 90%;
     max-width: 1100px;
@@ -113,11 +117,12 @@ main img {
 
 body::after {
     content: "";
-    position: fixed;
-    background-color: #fff;
-    top: 260px;
+    position: absolute;
+    background-color: #f0f0f5;
+    top: 0;
     right: 0;
     left: 0;
     bottom: 0;
+    height: 16rem;
     z-index: -1;
 }
